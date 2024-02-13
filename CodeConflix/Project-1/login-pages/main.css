@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+body{
+    background-color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0c0c0c;
+    color: white;
+    position: fixed;
+    height: 8vh;
+    width: 100%;
+    z-index: 9;
+    align-items: center;
+    padding: 8px;
+}
+
+nav h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+nav ul li {
+    padding: 6px 35px;
+    color: white;
+   display: inline-flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav ul li:hover {
+    color: #fff;
+    background-color: red;
+    border-radius: 8px;
+}
+.drop2{
+    display: none;
+    box-shadow: 3px 3px 10px 3px rgba(106, 106, 106, 0.762);
+    margin-left: -4%;
+    margin-top: 22px;
+    
+    background-color: black;
+}
+nav ul li:hover .drop2{
+    display: block;
+    position: absolute;
+}
+nav ul li .drop2 ul li{
+    display: block;
+    padding: 12px 48px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+}
+.drop2 ul li:hover{
+    border: 0.7px solid white;
+}
+nav ul li .drop2 .subdrop{
+    display: none;
+    box-shadow: 3px 3px 10px 3px rgba(106, 106, 106, 0.762);
+   margin-left: -295px;
+   background-color: black;
+   margin-top: -10px;
+}
+nav ul li .drop2 ul li:hover .subdrop{
+    display: block;
+    position: absolute;
+}
+nav ul li .drop2 ul li .subdrop ul li{
+    display: block;
+}
+
+.box {
+    display: flex;
+
+}
+
+.container {
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.358), rgba(0, 0, 0, 0.7)), url(images1/background.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    height: 100vh;
+}
+
+.sub {
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 7%;
+}
+
+.sub h1 {
+    font-size: 400%;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#anim-set {
+    color: transparent;
+    position: relative;
+}
+
+.sub #anim-set::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    border-right: 3px solid rgb(255, 0, 0);
+    color: rgb(255, 0, 0);
+    animation: animate 7s infinite;
+    animation-timing-function: ease-in;
+
+
+}
+
+@keyframes animate {
+
+    0%,
+    90%,
+    100% {
+        width: 0;
+    }
+
+    60% {
+        width: 100%;
+    }
+
+    70% {
+        width: 100%;
+        color: #fff;
+
+    }
+
+    80% {
+        width: 100%;
+        border-color: #fff;
+        color: white;
+    }
+
+}
+
+
+.sub button {
+    padding: 6px 25px;
+    border-radius: 4px;
+    margin-top: 5%;
+    border: none;
+    outline: none;
+    position: relative;
+    isolation: isolate;
+
+}
+
+@keyframes anim {
+    0% {
+        transform: rotate3d(20px);
+    }
+
+    30% {
+        transform: matrix3d(20px);
+    }
+
+    60% {
+        /* transform: rotateX(90deg); */
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+
+}
+
+.sub button::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: rgb(237, 71, 71);
+    border-radius: 4px;
+    inset: 0;
+    scale: 0 1;
+    transition: scale 400ms;
+}
+
+.sub button:hover::after,
+button:focus-visible::after {
+    scale: 1 1;
+    animation: anim 1s ease-in;
+
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    height: 80%;
+    background-color: rgb(0, 0, 0);
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.674);
+    position: absolute;
+
+}
+
+.foot {
+    margin: 15px 30px;
+    margin-top: 20px;
+    height: 30vh;
+}
+
+.foot label {
+    line-height: 30px;
+}
+
+@media (max-width:400px) {}
+
+@media (max-width:1100px) {
+    .sub {
+        margin-top: 17%;
+    }
+
+}
+
+@media (max-width:650px) {
+    .sub {
+        margin-top: 30%;
+    }
+}
+
+@media (max-height:940px) {
+    .sub {
+        margin-top: 15%;
+    }
+
+    .footer {
+        height: 25vh;
+    }
+
+    .foot {
+        height: 20vh;
+
+    }
+}
+
+@media (max-height:700px) {
+    nav {
+        height: 6vh;
+    }
+
+    .sub {
+        margin-top: 10%;
+
+    }
+
+    .footer {
+        height: 20vh;
+    }
+
+    .foot {
+        height: 20vh;
+
+    }
+}

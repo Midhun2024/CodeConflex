@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+nav img{
+    margin-top: 4px;
+}
+nav h1{
+    margin-left: 10px;
+}
+.container{
+    margin: 10px 30px;
+}
+.vission{
+    display: flex;
+}
+.box{
+    margin: 10px 20px;
+    border: 1px solid black;
+}
+.box p{
+   margin: 10px 10px;
+}
